@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mongoose Index</title>
+</head>
+<body>
+	<div style="text-align: center">
+		<div style="border: 1px solid black; display: inline-block; padding: 10px; text-align: left; margin-top: 100px;">
+			<% if(typeof(errors) != 'undefined'){ %>
+				<% for (var x in errors) { %>
+					<p><%= errors[x].message %></p>
+				<% } %>
+			<% } %>
+			<h2>Mongooses or Mongeese?</h2>
+			<table>
+				<tr>
+					<th>Name</th>
+					<th>Age</th>
+				</tr>
+				<% for (var i in mongooses){ %>
+					<tr>
+						<td><a href="/mongooses/<%= mongooses[i]._id %>"><%= mongooses[i].name %></a></td>
+						<td><%= mongooses[i].age %></td>
+					</tr>
+				<% } %>
+			</table>
+			<hr>
+		    <form action="/process_add" method="POST">
+			    <div>
+			        <label>Name: </label>
+			        <input type="text" name="name">
+			   	</div>
+			   	<div>
+			        <label>Age: </label>
+			        <input type="number" name="age">
+			   	</div>			
+		        <div id="submit_button">
+		        	<input type="submit" value="Add mongoose">
+		        </div>
+		    </form>
+		</div>
+	</div>
+</body>
+</html>

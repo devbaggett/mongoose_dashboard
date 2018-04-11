@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Mongoose</title>
+</head>
+<body>
+	<div style="text-align: center">
+		<div style="border: 1px solid black; display: inline-block; padding: 10px; text-align: left; margin-top: 100px;">
+			<h2>Edit Mongoose</h2>
+		    <form action="/mongooses/<%= mongoose._id %>" method="POST">
+			    <div>
+			        <label>Name: </label>
+			        <input type="text" name="name" placeholder="<%= mongoose.name %>">
+			   	</div>
+			   	<div>
+			        <label>Age: </label>
+			        <input type="number" name="age" placeholder="<%= mongoose.age %>">
+			   	</div>			
+		        <div id="submit_button">
+		        	<input type="submit" value="Edit mongoose">
+		        </div>
+		    </form>
+		    <form action="/mongooses/destroy/<%= mongoose._id %>" method="post">
+		    	<input type="submit" value="Delete mongoose">
+		    </form>
+		</div>
+	</div>
+</body>
+</html>

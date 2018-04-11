@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mongoose Info</title>
+</head>
+<body>
+	<div style="text-align: center">
+		<div style="border: 1px solid black; display: inline-block; padding: 10px; text-align: left; margin-top: 100px;">
+			<div>
+				<h2>Mongoose Info</h2>
+				<h5>Name: <%= mongoose.name %></h5>
+				<h5>Age: <%= mongoose.age %></h5>
+				<a href="/mongooses/edit/<%= mongoose._id %>">Edit Mongoose</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
